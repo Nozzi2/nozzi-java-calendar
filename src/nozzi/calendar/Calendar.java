@@ -1,15 +1,28 @@
 package nozzi.calendar;
 
+import java.util.Scanner;
+
 public class Calendar {
+	private static final int[] MAX_DAYS = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	public int getMaxDayOfMonth(int month) {
+		return MAX_DAYS[month-1];
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("ì¼  ì›”  í™”  ìˆ˜ ëª©  ê¸ˆ  í† ");
+		System.out.println("ÀÏ  ¿ù  È­  ¼ö ¸ñ  ±İ  Åä");
 		System.out.println("---------------------");
 		System.out.println(" 1  2  3  4  5  6  7");
 		System.out.println(" 8  9 10 11 12 13 14");
 		System.out.println("15 16 17 18 19 20 21");
 		System.out.println("22 23 24 25 26 27 28");
+		
+		Scanner sc = new Scanner(System.in);
+		Calendar cal = new Calendar();
+		System.out.println("´ŞÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+		int month = sc.nextInt();
+		
+		System.out.printf("%d¿ùÀº %dÀÏ±îÁö ÀÖ½À´Ï´Ù.", month, cal.getMaxDayOfMonth(month));
 	}
 
 }
